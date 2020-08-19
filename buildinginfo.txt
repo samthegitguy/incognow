@@ -1,2 +1,0 @@
-To build the jar file use jar vcmf manifest.txt allfiles.jar main.class
-To run the jar file use java -jar allfiles.jar
