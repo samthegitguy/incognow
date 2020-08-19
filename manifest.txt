@@ -1,1 +1,4 @@
 Main-Class: main
+Built-by: samthegitguy
+Github-Repository: https://github.com/samthegitguy/incognow
+Version: Pre-alpha
