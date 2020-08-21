@@ -1,4 +1,6 @@
-
+# Dependencies for development
++ JDK
+    + and with it JRE
 # I have JDK
 ## I want to contribute / I am suspicous and I want to build from source
 ### Compiling induvidual classes
