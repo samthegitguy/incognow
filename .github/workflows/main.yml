@@ -32,9 +32,8 @@ jobs:
         java -version      
         ls
       -name: Run Java
-       run: |
-         javac *.java
-         java index
+       run: javac *.java
+       run: java index
 
 
 
