@@ -23,8 +23,14 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Compile and Run Java
+    - name: Install software
       run: |
-        javac index.java
+        sudo add-apt-repository ppa:openjdk-r/ppa 
+        sudo apt update
+        sudo apt install openjdk-8-jdk
+        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+        java -version      
         ls
+
+
 
