@@ -24,7 +24,5 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Compile and Run Java
-      run: |
-        javac *.java
-        java index
+      run: ls
 
