@@ -29,11 +29,12 @@ jobs:
         sudo apt update
         sudo apt install openjdk-8-jdk
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-        java -version      
-        ls
+      -name: Run
+       run: |
         javac index.java
         javac center.java
         java index.java
+      
         
 
 
