@@ -35,7 +35,9 @@ jobs:
         javac center.java
     - name: Run
       run: java index.java
-    - name: Check Job Successd
+    - name: Check Job Success
+      run: bash
+      # Above command does nothing
       if: ${{ success() }}
         
       
