@@ -35,6 +35,8 @@ jobs:
         javac center.java
     - name: Run
       run: java index.java
+    - name: Check Job Successd
+      if: ${{ success() }}
         
       
         
