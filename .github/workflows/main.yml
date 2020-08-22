@@ -39,9 +39,18 @@ jobs:
       run: bash
       # Above command does nothing
       if: ${{ success() }}
-        
-      
-        
-
-
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run Git
+        run: |
+          git status
+          git checkout -b working
+          git merge master -m "Merge commit"
+          git remote add origin https://github.com/samthegitguy/incognow
+          git push -u origin master
 
