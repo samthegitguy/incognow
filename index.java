@@ -7,7 +7,7 @@ class SecondaryThread extends Thread
 } 
 
 // Main Class 
-public class Caller
+public class index
 { 
 	public static void main(String[] args) throws InterruptedException
 	{ 
