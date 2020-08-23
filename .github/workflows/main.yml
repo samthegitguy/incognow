@@ -34,9 +34,6 @@ jobs:
         javac center.java
     - name: Run
       run: java index.java
-    - name: Check Job Success
-      run: bash
-      if: ${{ success() }}
   deploy:
     runs-on: ubuntu-latest
     needs: build
