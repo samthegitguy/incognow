@@ -33,8 +33,6 @@ jobs:
         javac index.java
         jar cmf manifest.txt program.jar *.class supports
         mv program.jar bin/program.jar
-    - name: Test Jar
-      run: java -jar program.jar
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
@@ -44,14 +42,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download Jar
+      - name: Remove old jar
+        run: rm bin/program.jar
+      - name: Download new jar
         uses: actions/upload-artifact@v2
         with:
           name: jar
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Archive Jar
+      - name: Test Jar
+      # There are no checked errors since they were just compiled but this checks for unchecked errors.
+        run: java -jar program.jar
+      - name: Upload to Git if it works
         run: |
           git status
           git checkout -b working
