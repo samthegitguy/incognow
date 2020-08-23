@@ -59,9 +59,8 @@ jobs:
         run: java -jar program.jar
       - name: Upload to Git if it works
         run: |
-          git status
+          git add *
+          git commit -m "CI: Update Jar"
           git checkout -b working
-          git merge master -m "Merge commit"
-          git remote add origin https://github.com/samthegitguy/incognow
-          git push -u working working
-
+          git merge master
+          git push --all
