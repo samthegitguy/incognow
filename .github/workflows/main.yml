@@ -57,13 +57,10 @@ jobs:
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
-      - name: Upload to Git if it works
-        if: success()
-        run: |
-          git config user.name "CI"
-          git config user.email "CI@incognow.com
-          git add *
-          git commit -m "CI: Update Jar"
-          git checkout -b working
-          git merge master working
-          git push --all
+      - name: Merge development -> staging
+        uses: devmasx/merge-branch@v1.3.0
+        with:
+          type: now
+          from_branch: master
+          target_branch: working
+          github_token: ${{ github.token }}
