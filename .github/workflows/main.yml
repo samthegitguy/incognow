@@ -63,5 +63,5 @@ jobs:
           git checkout -b working
           git merge master -m "Merge commit"
           git remote add origin https://github.com/samthegitguy/incognow
-          git push -u origin master
+          git push -u working working
 
