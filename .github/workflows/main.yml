@@ -36,7 +36,7 @@ jobs:
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
-        name: jar
+        name: FinalJar
         path: bin/program.jar
   deploy:
     runs-on: ubuntu-latest
@@ -51,10 +51,9 @@ jobs:
       - name: Remove old jar
         run: rm bin/program.jar
       - name: Download new jar
-        uses: actions/upload-artifact@v2
+        uses: actions/download-artifact@v2
         with:
-          name: jar
-          path: bin/program.jar
+          name: FinalJar
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
