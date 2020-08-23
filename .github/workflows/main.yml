@@ -60,6 +60,8 @@ jobs:
       - name: Upload to Git if it works
         if: success()
         run: |
+          git config user.name "CI"
+          git config user.email "CI@incognow.com
           git add *
           git commit -m "CI: Update Jar"
           git checkout -b working
