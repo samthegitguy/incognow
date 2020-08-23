@@ -54,6 +54,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jar
+          path: bin/program.jar
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
