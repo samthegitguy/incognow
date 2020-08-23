@@ -35,10 +35,19 @@ jobs:
         mv program.jar bin/program.jar
     - name: Test Jar
       run: java -jar program.jar
+    - name: Upload Jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: jar
+        path: bin/program.jar
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download Jar
+        uses: actions/upload-artifact@v2
+        with:
+          name: jar
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
