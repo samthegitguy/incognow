@@ -1,23 +1,13 @@
-package incogcaller;
 class SecondaryThread extends Thread 
 { 
 	public void run() 
 	{ 
-		try
-		{ 
-            incognitor.center obj = new incognitor.center();  //using fully qualified name  
-            obj.incognito();  
-		} 
-		catch (Exception e) 
-		{ 
-			// Throwing an exception 
-			System.out.println ("Exception is caught"); 
-		} 
+
 	} 
 } 
 
 // Main Class 
-public class index
+public class Caller
 { 
 	public static void main(String[] args) throws InterruptedException
 	{ 
