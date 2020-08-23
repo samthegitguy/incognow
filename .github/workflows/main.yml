@@ -42,15 +42,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - run: |
+        sudo apt install default-jre
+      - name: Checkout to local
+        uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0
       - name: Remove old jar
         run: rm bin/program.jar
       - name: Download new jar
         uses: actions/upload-artifact@v2
         with:
           name: jar
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
