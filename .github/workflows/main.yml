@@ -58,9 +58,10 @@ jobs:
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
       - name: Upload to Git if it works
+        if: success()
         run: |
           git add *
           git commit -m "CI: Update Jar"
           git checkout -b working
-          git merge master
+          git merge master working
           git push --all
