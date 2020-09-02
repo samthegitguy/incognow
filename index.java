@@ -2,7 +2,10 @@ class SecondaryThread extends Thread
 { 
 	public void run() 
 	{ 
-
+		/**
+		 * Opens window using java.awt.Robot class 
+		 * (Coming Soon)
+		 */
 	} 
 } 
 
@@ -11,6 +14,9 @@ public class index
 { 
 	public static void main(String[] args) throws InterruptedException
 	{ 
+		/**
+		 * Displays progress bar. Due to thread.sleep this class throws an Interrupted exception.
+		 */
 		int n = 3; // Number of threads 
 		for (int i=0; i<n; i++) 
 		{ 
