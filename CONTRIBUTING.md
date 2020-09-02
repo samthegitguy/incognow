@@ -15,7 +15,7 @@ Ensure the program works
 Make sure you run this in the root folder if you want to build yourself not the bin folder - we have moved the jar file to the bin folder after creating in the root.
 ` jar cmf manifest.txt program.jar *.class docs assets `
 3. Move all binary / byte code files to bin
-4. Commit `git commit -m "Update bin and docs files for release`
+4. Commit `git commit -m "Update bin and docs files for release"`
 3. Create release on Github
 
 
