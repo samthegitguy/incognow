@@ -1,26 +1,22 @@
-package incogcaller;
 class SecondaryThread extends Thread 
 { 
 	public void run() 
 	{ 
-		try
-		{ 
-            incognitor.center obj = new incognitor.center();  //using fully qualified name  
-            obj.incognito();  
-		} 
-		catch (Exception e) 
-		{ 
-			// Throwing an exception 
-			System.out.println ("Exception is caught"); 
-		} 
+		/**
+		 * Opens window using java.awt.Robot class 
+		 * (Coming Soon)
+		 */
 	} 
 } 
 
 // Main Class 
-public class index
+public class Emulator
 { 
 	public static void main(String[] args) throws InterruptedException
 	{ 
+		/**
+		 * Displays progress bar. Due to thread.sleep this class throws an Interrupted exception.
+		 */
 		int n = 3; // Number of threads 
 		for (int i=0; i<n; i++) 
 		{ 
