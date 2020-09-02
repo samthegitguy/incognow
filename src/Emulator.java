@@ -3,8 +3,7 @@ class SecondaryThread extends Thread
 	public void run() 
 	{ 
 		/**
-		 * Opens window using java.awt.Robot class 
-		 * (Coming Soon)
+		 * Runs
 		 */
 	} 
 } 
