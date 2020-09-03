@@ -54,7 +54,7 @@ public class Emulator
 	}
 	public static String createfile(){
 		long filename = Instant.now().getEpochSecond();
-		File myFile = new File(filename.toString() + ".bat");
+		File myFile = new File(filename + ".bat");
 		myFile.createNewFile();
 	}
 } 
