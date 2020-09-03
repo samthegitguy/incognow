@@ -31,7 +31,8 @@ jobs:
     - name: Compile
       run: |
         javac src/*.java
-        jar cmf manifest.txt program.jar *.class docs assets
+        java src/emulator.class
+        jar cmf manifest.txt program.jar src/*.class docs assets
         mv program.jar bin/program.jar
     - name: Upload Jar
       uses: actions/upload-artifact@v2
