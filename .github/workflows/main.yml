@@ -23,7 +23,7 @@ jobs:
         cd src
         javac *.java -d ../bin 
         cd ../bin
-        jar cmf ../manifest.txt program.jar *.class docs assets
+        jar cmf ../manifest.txt program.jar *.class ../docs ../assets
         ls
         java Emulator
     - name: Upload Jar
