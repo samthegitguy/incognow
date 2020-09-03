@@ -51,6 +51,11 @@ public class Emulator
         	Thread.sleep(50);
         	}
         	System.out.print("#]");
+		try{
+			createfile();
+		}
+		catch(){}
+		finally{}
 	}
 	public static File createfile() throws IOException 
 	{
