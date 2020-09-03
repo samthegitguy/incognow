@@ -30,7 +30,7 @@ jobs:
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
     - name: Compile
       run: |
-        javac *.java
+        javac src/*.java
         jar cmf manifest.txt program.jar *.class docs assets
         mv program.jar bin/program.jar
     - name: Upload Jar
