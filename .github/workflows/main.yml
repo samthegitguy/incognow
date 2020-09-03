@@ -31,8 +31,8 @@ jobs:
     - name: Compile
       run: |
         cd src
-        javac *.java
-        java Emulator
+        javac *.java -d ../bin 
+        java ../bin/Emulator
         jar cmf manifest.txt program.jar *.class docs assets
         mv program.jar bin/program.jar
     - name: Upload Jar
