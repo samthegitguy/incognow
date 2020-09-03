@@ -1,7 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-
 name: Java Compiler
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -9,19 +7,11 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
-
   build:
-  
     runs-on: ubuntu-latest
-
-  
     steps: 
-  
     - uses: actions/checkout@v2
-
-  
     - name: Install software
       run: |
         sudo add-apt-repository ppa:openjdk-r/ppa 
@@ -32,9 +22,9 @@ jobs:
       run: |
         cd src
         javac *.java -d ../bin 
-        java ../bin/Emulator
-        jar cmf manifest.txt program.jar *.class docs assets
-        mv program.jar bin/program.jar
+        cd ../bin
+        jar cmf ../manifest.txt bin/program.jar bin/*.class docs assets
+        cd 
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
