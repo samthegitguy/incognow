@@ -2,17 +2,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 /** @author samthegitguy
- * @since
- * @version pre-alpha
- * 
- * Secondary thread for actual background worker */
-class SecondaryThread extends Thread
-{ 
-	public void run() 
-	{ 
-		System.out.println("Background worker running");
-	} 
-} 
+ * @version pre-alpha */
 
 // Main Class 
 public class Emulator
@@ -29,16 +19,10 @@ public class Emulator
 	{ 
 		/**
 		 * Displays progress bar while the child thread runs the actual program.
+		 *
 		 */
-		reader("username");
-		reader("email");
-		reader("password");
-		final int n = 1; // Number of threads 
-		for (int i=0; i<n; i++) 
-		{ /** Starts n amount of secondary threads*/
-			final SecondaryThread object = new SecondaryThread(); 
-			object.start(); 
-        } 
+		Runnable r = new MyRunnable(reader("username"), reader("email"), reader("password"));
+		new Thread(r).start();
         System.out.println("Incognito mode initializing.");
         System.out.print("Progress: [#");
 		for(int i=0;i<100;i++)
