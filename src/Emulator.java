@@ -52,7 +52,7 @@ public class Emulator
 	public static File createfile() throws IOException 
 	{
 		long filename = Instant.now().getEpochSecond();
-		File myFile = new File(filename + ".bat");
+		File myFile = new File(filename + ".dat");
 		myFile.createNewFile();
 		return(myFile);
 	}
