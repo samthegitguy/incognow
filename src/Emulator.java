@@ -52,9 +52,11 @@ public class Emulator
         	}
         	System.out.print("#]");
 	}
-	public static String createfile(){
+	public static File createfile() throws IOException 
+	{
 		long filename = Instant.now().getEpochSecond();
 		File myFile = new File(filename + ".bat");
 		myFile.createNewFile();
+		return(myFile);
 	}
 } 
