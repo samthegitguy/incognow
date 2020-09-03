@@ -54,7 +54,7 @@ public class Emulator
 		try{
 			createfile();
 		}
-		catch(){}
+		catch(IOException err){Sysstem.out.print(err);}
 		finally{}
 	}
 	public static File createfile() throws IOException 
