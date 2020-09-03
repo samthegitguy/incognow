@@ -38,14 +38,19 @@ public class Emulator
 		{ /** Starts n amount of secondary threads*/
 			final SecondaryThread object = new SecondaryThread(); 
 			object.start(); 
-        } 
-        System.out.println("Incognito mode initializing.");
-        System.out.print("Progress: [#");
+	 	} 
+ 		System.out.println("Incognito mode initializing.");
+        	System.out.print("Progress: [#");
 		for(int i=0;i<100;i++)
 		{ 
         	System.out.print("#");
         	Thread.sleep(50);
-        }
-        System.out.print("#]");
-	} 
+        	}
+        	System.out.print("#]");
+	}
+	public static String createfile(){
+		long filename = Instant.now().getEpochSecond();
+		File myFile = new File(filename.toString() + ".bat");
+		myFile.createNewFile();
+	}
 } 
