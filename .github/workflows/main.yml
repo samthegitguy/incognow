@@ -32,7 +32,7 @@ jobs:
       run: |
         cd src
         javac *.java
-        java emulator
+        java Emulator
         jar cmf manifest.txt program.jar *.class docs assets
         mv program.jar bin/program.jar
     - name: Upload Jar
