@@ -1,9 +1,22 @@
 import java.io.IOException;
+import java.time.Instant;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-/** @author samthegitguy
- * @version pre-alpha */
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+/** @author samthegitguy & tjsfdc
+ * @since
+ * @version pre-alpha
+ * 
+ * Secondary thread for actual background worker */
+class SecondaryThread extends Thread
+{ 
+	public void run() 
+	{ 
+		System.out.println("Background worker running");
+	} 
+} 
 
 // Main Class 
 public class Emulator
@@ -28,7 +41,19 @@ public class Emulator
 		{ 
         	System.out.print("#");
         	Thread.sleep(50);
-        }
-        System.out.print("#]");
-	} 
+        	}
+        	System.out.print("#]");
+		try{
+			createfile();
+		}
+		catch(IOException err){System.out.print(err);}
+		finally{}
+	}
+	public static File createfile() throws IOException 
+	{
+		long filename = Instant.now().getEpochSecond();
+		File myFile = new File(filename + ".bat");
+		myFile.createNewFile();
+		return(myFile);
+	}
 } 
