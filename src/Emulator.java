@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-/** @author samthegitguy
+/** @author samthegitguy & tjsfdc
  * @since
  * @version pre-alpha
  * 
