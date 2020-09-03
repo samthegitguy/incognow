@@ -23,8 +23,9 @@ jobs:
         cd src
         javac *.java -d ../bin 
         cd ../bin
-        jar cmf ../manifest.txt bin/program.jar bin/*.class docs assets
-        cd 
+        jar cmf ../manifest.txt program.jar *.class docs assets
+        ls
+        java Emulator
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
