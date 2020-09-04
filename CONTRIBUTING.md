@@ -21,9 +21,9 @@ Make sure you run this in the src folder if you want to build yourself not the b
 Final code
 ```
 javac src/*.java -d bin
-javadoc *.java -d docs
-jar cmf manifest.txt program.jar bin/*.class docs assets
-# Move jar (command varies by system)
+javadoc src/*.java -d docs
+cd bin
+jar cmf ../manifest.txt program.jar *.class ../docs ../assets
 git add * && git commit -m 'Update bin and docs files for release'
 # Create release on github or use git tag. Attach jar and classes.
 ```

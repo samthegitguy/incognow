@@ -3,8 +3,6 @@ import java.time.Instant;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 /** @author samthegitguy & tjsfdc
  * @since
  * @version pre-alpha
@@ -42,12 +40,8 @@ public class Emulator
         	System.out.print("#");
         	Thread.sleep(50);
         	}
-        	System.out.print("#]");
-		try{
-			createfile();
-		}
-		catch(IOException err){System.out.print(err);}
-		finally{}
+        System.out.print("#]");
+		createfile();
 	}
 	public static File createfile() throws IOException 
 	{
