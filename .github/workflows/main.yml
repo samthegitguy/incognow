@@ -44,6 +44,7 @@ jobs:
           fetch-depth: 0
       - name: Remove old jar
         run: |
+          ls
           cd bin
           ls
           echo ---------------------------------
