@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.time.Instant;
 import java.io.File;
 /** Secondary thread for actual background worker
  * @author samthegitguy & tjsfdc
@@ -16,7 +15,6 @@ class SecondaryThread extends Thread
 // Main Class 
 public class Emulator
 { 
-
 	public static void main(final String[] args) throws InterruptedException, IOException {
 		/**
 		 * Displays progress bar while the child thread runs the actual program.
@@ -30,14 +28,16 @@ public class Emulator
 		{ 
         	System.out.print("#");
         	Thread.sleep(50);
-        	}
-        System.out.print("#]");
+        	} 
+		System.out.print("#]");
+		Serialize ser = new Serialize();
+		ser.Serializer("Hello World!");
 		createfile();
 	}
 	public static File createfile() throws IOException 
 	{
-		long filename = Instant.now().getEpochSecond();
-		File myFile = new File(filename + ".dat");
+		String filename = ".config";
+		File myFile = new File(filename);
 		myFile.createNewFile();
 		return(myFile);
 	}
