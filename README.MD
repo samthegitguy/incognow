@@ -1,4 +1,4 @@
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Build Status](https://github.com/samthegitguy/password-manager-one/workflows/Java%20Compiler/badge.svg)](https://github.com/samthegitguy/password-manager-one)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Build Status](https://github.com/samthegitguy/password-manager-one/workflows/Java%20Compiler/badge.svg)](https://github.com/samthegitguy/password-manager-one)
 [![GNU GPLv2](https://img.shields.io/badge/license-GNU%20General%20Public%20License%20v2.0-brightgreen)](https://github.com/samthegitguy/password-manager-one/blob/master/LICENSE)
 ![Project size](https://img.shields.io/github/repo-size/samthegitguy/password-manager-one)
 [![Issues open](https://img.shields.io/github/issues/samthegitguy/password-manager-one)](https://github.com/samthegitguy/password-manager-one/issues)
