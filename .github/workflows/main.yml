@@ -38,17 +38,6 @@ jobs:
     steps:
       - run: |
           sudo apt install default-jre
-      - name: Checkout to local
-        uses: actions/checkout@v2
-        with: 
-          fetch-depth: 0
-      - name: Remove old jar
-        run: |
-          ls
-          cd bin
-          ls
-          echo ---------------------------------
-          rm bin/program.jar
       - name: Download new jar
         uses: actions/download-artifact@v2
         with:
