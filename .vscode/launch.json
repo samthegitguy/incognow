@@ -9,12 +9,14 @@
             "name": "CodeLens (Launch) - Emulator",
             "request": "launch",
             "mainClass": "Emulator",
+            "cwd": "${workspaceFolder}/bin",
             "projectName": "passwordmanagerone_16c62676"
         },
         {
             "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
+            "cwd": "${workspaceFolder}/bin",
             "mainClass": "${file}"
         },
         {
@@ -22,6 +24,7 @@
             "name": "Debug (Launch)-index<incognow_b2244b74>",
             "request": "launch",
             "mainClass": "index",
+            "cwd": "${workspaceFolder}/bin",
             "projectName": "incognow_b2244b74"
         }
     ]

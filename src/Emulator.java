@@ -21,7 +21,10 @@ public class Emulator
 		 */
 		reader myReader = new reader();
 		final Runnable r = new MyRunnable(myReader.reader("username"), myReader.reader("email"), myReader.reader("password"));
+		
 		new Thread(r).start();
+		Serialize ser = new Serialize();
+		ser.Serializer("Hello World!");
 		System.out.println("Incognito mode initializing.");
 		System.out.print("Progress: [#");
 		for(int i=0;i<100;i++)
@@ -30,15 +33,5 @@ public class Emulator
         	Thread.sleep(50);
         	} 
 		System.out.print("#]");
-		Serialize ser = new Serialize();
-		ser.Serializer("Hello World!");
-		createfile();
-	}
-	public static File createfile() throws IOException 
-	{
-		String filename = ".config";
-		File myFile = new File(filename);
-		myFile.createNewFile();
-		return(myFile);
 	}
 } 

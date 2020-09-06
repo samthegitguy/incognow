@@ -3,7 +3,7 @@ public class Serialize implements java.io.Serializable {
     static final long serialVersionUID = 42L;
     public void Serializer(final String unserialized) throws IOException, FileNotFoundException 
     {
-        FileOutputStream fileOut = new FileOutputStream(".config");
+        FileOutputStream fileOut = new FileOutputStream(".user-data.ser");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(unserialized);
         out.close();
