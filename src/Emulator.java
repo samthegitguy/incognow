@@ -1,13 +1,10 @@
 import java.io.IOException;
 import java.time.Instant;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.File;
-/** @author samthegitguy & tjsfdc
+/** Secondary thread for actual background worker
+ * @author samthegitguy & tjsfdc
  * @since
- * @version pre-alpha
- * 
- * Secondary thread for actual background worker */
+ * @version pre-alpha */
 class SecondaryThread extends Thread
 { 
 	public void run() 
@@ -19,22 +16,16 @@ class SecondaryThread extends Thread
 // Main Class 
 public class Emulator
 { 
-	static String reader(final String readType) throws IOException {
-		System.out.println("What is your " + readType + "?");
-		final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		final String output = reader.readLine();
-		return output;
-	}
 
 	public static void main(final String[] args) throws InterruptedException, IOException {
 		/**
 		 * Displays progress bar while the child thread runs the actual program.
-		 *
 		 */
-		final Runnable r = new MyRunnable(reader("username"), reader("email"), reader("password"));
+		reader myReader = new reader();
+		final Runnable r = new MyRunnable(myReader.reader("username"), myReader.reader("email"), myReader.reader("password"));
 		new Thread(r).start();
-        System.out.println("Incognito mode initializing.");
-        System.out.print("Progress: [#");
+		System.out.println("Incognito mode initializing.");
+		System.out.print("Progress: [#");
 		for(int i=0;i<100;i++)
 		{ 
         	System.out.print("#");
