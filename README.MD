@@ -9,3 +9,6 @@
 * JRE
 # Run with Java Runtime Environment
 ` java -jar program.jar `
+# Important Instructions 
+* Do not delete assets, docs, bin folder in your commit. 
+* Do not update main.yaml without consulting everyone.
