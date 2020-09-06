@@ -45,10 +45,10 @@ jobs:
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
-      - name: Merge development -> staging
-        uses: devmasx/merge-branch@v1.3.0
-        with:
-          type: now
-          from_branch: master
-          target_branch: working
-          github_token: ${{ github.token }}
+      #- name: Merge development -> staging
+      #  uses: devmasx/merge-branch@v1.3.0
+      #  with:
+      #    type: now
+      #    from_branch: master
+      #    target_branch: working
+      #    github_token: ${{ github.token }}
