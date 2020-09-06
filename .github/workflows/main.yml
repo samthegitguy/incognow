@@ -26,9 +26,6 @@ jobs:
         jar cmf ../manifest.txt program.jar *.class ../docs ../assets
         ls
         echo ---------------------------------------
-        cd bin
-        ls
-        echo ---------------------------------------
         java Emulator
     - name: Upload Jar
       uses: actions/upload-artifact@v2
