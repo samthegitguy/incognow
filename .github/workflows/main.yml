@@ -25,6 +25,7 @@ jobs:
         cd ../bin
         jar cmf ../manifest.txt program.jar *.class ../docs ../assets
         ls
+        echo ---------------------------------------
         java Emulator
     - name: Upload Jar
       uses: actions/upload-artifact@v2
@@ -37,12 +38,6 @@ jobs:
     steps:
       - run: |
           sudo apt install default-jre
-      - name: Checkout to local
-        uses: actions/checkout@v2
-        with: 
-          fetch-depth: 0
-      - name: Remove old jar
-        run: rm bin/program.jar
       - name: Download new jar
         uses: actions/download-artifact@v2
         with:
@@ -50,10 +45,10 @@ jobs:
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
         run: java -jar program.jar
-      - name: Merge development -> staging
-        uses: devmasx/merge-branch@v1.3.0
-        with:
-          type: now
-          from_branch: master
-          target_branch: working
-          github_token: ${{ github.token }}
+      #- name: Merge development -> staging
+      #  uses: devmasx/merge-branch@v1.3.0
+      #  with:
+      #    type: now
+      #    from_branch: master
+      #    target_branch: working
+      #    github_token: ${{ github.token }}
