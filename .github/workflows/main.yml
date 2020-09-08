@@ -25,13 +25,10 @@ jobs:
         cd ../bin
         jar cmf ../manifest.txt program.jar *.class ../docs ../assets
         ls
-        echo ---------------------------------------
-        cd ../docs
-        ls
-        cd ../assets
-        ls
-        echo -------------------
+        echo ------------------------------------
         java Emulator
+        cd ..
+        tree
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
