@@ -3,6 +3,9 @@ For information on how to behave and react in this repo see COLLABORATION.md
 Ensure you always comment objects you create using /** */ javadoc comments and add your name to the CODEOWNERS file 
 # Dependencies
 + JDK
++ Git 
+# Onboarding
+1. `git commit --recursive https://github.com/samthegitguy/passwordmanagerone`
 # Before commiting
 1. `javac *.java`
 2. `java %Main class name%`
