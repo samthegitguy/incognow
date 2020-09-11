@@ -5,6 +5,7 @@
 [![Issues closed](https://img.shields.io/github/issues-closed/samthegitguy/password-manager-one)](https://github.com/samthegitguy/password-manager-one/issues?q=is%3Aissue+is%3Aclosed)
 [![Open PRs](https://img.shields.io/github/issues-pr/samthegitguy/password-manager-one)](https://github.com/samthegitguy/password-manager-one/pulls)
 [![Closed PRs](https://img.shields.io/github/issues-pr-closed/samthegitguy/password-manager-one)](https://github.com/samthegitguy/password-manager-one/pulls?q=is%3Apr+is%3Aclosed)
+[![Gitter](https://badges.gitter.im/password-manager-one/community.svg)](https://gitter.im/password-manager-one/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 # Dependencies for running 
 * JRE
 # Run with Java Runtime Environment
