@@ -21,7 +21,9 @@ Make sure you run this in the src folder if you want to build yourself not the b
 3. Move jar to bin
 4. Commit `git add * && git commit -m "Update bin and docs files for release"`
 3. Create release on Github
-Final code
+
+Final sudo code
+Use compilew.bat or compilew.sh for automation instead
 ```
 javac src/*.java -d bin
 javadoc src/*.java -d docs
