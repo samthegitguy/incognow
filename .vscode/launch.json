@@ -8,6 +8,14 @@
             "type": "java",
             "name": "CodeLens (Launch) - Emulator",
             "request": "launch",
+            "cwd": "${workspaceFolder}/bin",
+            "mainClass": "Emulator",
+            "projectName": "password-manager-one_9047a596"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Emulator",
+            "request": "launch",
             "mainClass": "Emulator",
             "cwd": "${workspaceFolder}/bin",
             "projectName": "passwordmanagerone_16c62676"

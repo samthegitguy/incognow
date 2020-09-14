@@ -5,5 +5,9 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Sam\\Downloads\\apache-log4j-2.13.3-bin\\apache-log4j-2.13.3-bin\\log4j-core-2.13.3.jar"
+    ]
 }

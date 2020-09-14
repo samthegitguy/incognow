@@ -5,7 +5,7 @@ echo There is no production version for this program yet.
 pause
 javac src/*.java -d bin/classes
 javadoc src/*.java -d docs
-jar vcmf manifest.txt passwordmanagerone.jar -C bin/classes . -C docs . -C assets .
+jar vcmf MANIFEST.MF passwordmanagerone.jar -C bin/classes . -C docs . -C assets .
 move passwordmanagerone.jar bin/libs
 git add bin && git commit -m "Update bin and docs files for release"
 echo on

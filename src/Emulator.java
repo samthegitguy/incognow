@@ -1,8 +1,7 @@
 import java.io.IOException;
 import java.io.File;
 /** Secondary thread for actual background worker
- * @author samthegitguy & tjsfdc
- * @since
+ * @author github samthegitguy & github tjsfdc
  * @version pre-alpha */
 class SecondaryThread extends Thread
 { 
