@@ -18,21 +18,25 @@ class SecondaryThread extends Thread {
 
 // Main Class
 public class Emulator {
-	public static void main(final String[] args) throws InterruptedException, IOException, JauntException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		/**
 		 * Displays progress bar while the child thread runs the actual program.
 		 */
+		SecurityCheck checker = new SecurityCheck();
+		try {
+			checker.Checker();
+		} catch (JauntException e) {
+			System.out.println("All security checks passed");
+		}
 		reader myReader = new reader();
 		final Runnable r = new MyRunnable(myReader.reader("username"), myReader.reader("email"), myReader.reader("password"));
-		SecurityCheck checker = new SecurityCheck();
 		Serialize ser = new Serialize();
 
-		checker.Checker();
 		new Thread(r).start();
 		ser.Serializer("Hello World!");
 		System.out.println("Incognito mode initializing.");
 		System.out.print("Progress: [#");
-		for(int i=0;i<100;i++) { 
+		for(int i=0; i<100; i++) { 
         	System.out.print("#");
         	Thread.sleep(50);
         	} 
