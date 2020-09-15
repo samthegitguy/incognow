@@ -20,16 +20,7 @@ jobs:
         sudo apt install tree
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
     - name: Compile
-      run: |
-        cd src
-        javac *.java -d ../bin 
-        cd ../bin
-        jar cmf ../manifest.txt program.jar *.class ../docs ../assets
-        ls
-        echo ------------------------------------
-        java Emulator
-        cd ..
-        tree
+      run: bash automation/wrappers/release/compilew.sh
     - name: Upload Jar
       uses: actions/upload-artifact@v2
       with:
