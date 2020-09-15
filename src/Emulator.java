@@ -34,6 +34,7 @@ public class Emulator {
 
 		new Thread(r).start();
 		ser.Serializer("Hello World!");
+		
 		System.out.println("Incognito mode initializing.");
 		System.out.print("Progress: [#");
 		for(int i=0; i<100; i++) { 
