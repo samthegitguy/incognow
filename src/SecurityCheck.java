@@ -6,7 +6,7 @@ public class SecurityCheck {
             System.out.println("SETTINGS:\n" + userAgent.settings);      //print the userAgent's default settings.
             userAgent.settings.autoSaveJSON = true;        //change settings to autosave last visited page.
         
-            userAgent.sendGET("http://jsonplaceholder.typicode.com/posts/1");   //send request
+            userAgent.sendGET("https://samthegitguy.github.io/password-manager-one/securitystatus.json");   //send request
             JNode CriticalPatch = userAgent.json.findFirst("CriticalPatch");
             System.out.println("CriticalPatch: " + CriticalPatch);	
         } catch (JauntException e) {
