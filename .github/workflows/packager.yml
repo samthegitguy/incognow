@@ -29,5 +29,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: cd bin/jar & jpackage --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.6.0
+
 
 
