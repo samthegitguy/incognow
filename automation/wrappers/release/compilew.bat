@@ -6,6 +6,6 @@ pause
 javac src/*.java -d bin/classes -cp bin/libs
 javadoc src/*.java -d docs
 jar vcmf MANIFEST.MF passwordmanagerone.jar -C bin/classes . -C docs . -C assets .
-move passwordmanagerone.jar bin/libs -cp bin/libs
+move passwordmanagerone.jar bin/jar -cp bin/libs
 git add bin && git commit -m "Update bin and docs files for release"
 echo on

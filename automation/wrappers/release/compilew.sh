@@ -5,6 +5,6 @@ echo There is no production version for this program yet.
 javac src/*.java -d bin/classes -cp bin/libs
 javadoc src/*.java -d docs
 jar vcmf manifest.txt passwordmanagerone.jar -C bin/classes . -C docs . -C assets .
-mv passwordmanagerone.jar bin/libs -cp bin/libs
+mv passwordmanagerone.jar bin/jar -cp bin/libs
 git add bin && git commit -m "Update bin and docs files for release"
 echo on
