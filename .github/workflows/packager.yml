@@ -28,6 +28,6 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: cd bin & jpackage --input bin/packages/ubuntu --main-jar -C bin/jar/passwordmanagerone.jar . --app-version 0.0.0
+        run: cd bin/jar & jpackage --input bin/packages/ubuntu --main-jar passwordmanagerone.jar --app-version 0.0.0
 
 
