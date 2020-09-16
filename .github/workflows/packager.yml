@@ -28,6 +28,6 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: jpackage --input bin/packages/windows --main-jar HelloWorld.jar --app-version 0.0.0
+        run: jpackage --input bin/packages/windows --main-jar bin/jar/passwordmanagerone.jar --app-version 0.0.0
 
 
