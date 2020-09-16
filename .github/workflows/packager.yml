@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   package-ubuntu:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,6 +28,6 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: jpackage --input bin/packages/windows --main-jar bin/jar/passwordmanagerone.jar --app-version 0.0.0
+        run: jpackage --input bin/packages/ubuntu --main-jar bin/jar/passwordmanagerone.jar --app-version 0.0.0
 
 
