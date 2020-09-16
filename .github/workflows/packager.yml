@@ -78,6 +78,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
   package-windows:
+      needs: package-ubuntu
       # The type of runner that the job will run on
       runs-on: windows-latest
 
@@ -141,6 +142,70 @@ jobs:
           uses: ad-m/github-push-action@v0.6.0
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
+  package-macos:
+    needs: package-windows
+    # The type of runner that the job will run on
+    runs-on: macos-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.2
+        with:
+          java-version: 14.0    
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: cd bin/jar & jpackage --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
+      - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          
+
+          # The name of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_name: CI (bot)
+
+          # The email of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_email: CI@github.actions
+
+          # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
+          # Default: '.'
+          
+
+          # Whether to use the --force option on `git add`, in order to bypass eventual gitignores
+          # Default: false
+          force: false
+
+          # Whether to use the --signoff option on `git commit`
+          # Default: false
+          signoff: true
+
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions'
+          message: 'Add packaging (CI)'
+
+          # Name of the branch to use, if different from the one that triggered the workflow
+          # Default: the branch that triggered the workflow (from GITHUB_REF)
+
+          # The arguments for the `git rm` command (see the paragraph below for more info)
+          # Default: ''
+
+
+          # Name of the tag to add to the new commit (see the paragraph below for more info)
+          # Default: ''
+          tag: "v1.0.0"
+
+        env:
+          # This is necessary in order to push a commit to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
