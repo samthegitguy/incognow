@@ -72,8 +72,6 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-      - name: Github Checkout
-        uses: actions/checkout@v2 # Resync
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
         with:
