@@ -7,7 +7,7 @@ name: JPackage generator
 on:
   release:
   push:
-    types: [published]
+    types: [ published ]
     branches: [ master ]
   pull_request:
     branches: [ master ]
