@@ -79,7 +79,6 @@ jobs:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
   package-windows:
-    needs: package-ubuntu
     # The type of runner that the job will run on
     runs-on: windows-latest
 
@@ -87,6 +86,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Setup LFS
+        run: |
+          sudo apt-get install git-lfs 
+          git lfs install
       
       - name: Setup Java JDK
         uses: actions/setup-java@v1.4.2
@@ -94,7 +97,8 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Create package
-        run: cd bin/jar & jpackage --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
+        run: cd bin/jar & jpackage --name passwordmanagerwindows.msi --input . --type msi --main-jar passwordmanagerone.jar --app-version 0.0.0
+      - run: git lfs track passwordmanagerlinux.deb_0.0.0-1_amd64.msi
       - run: git checkout master && git fetch && git pull
       - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
         with:
@@ -139,12 +143,7 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-      - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
   package-macOS:
-    needs: package-windows
     # The type of runner that the job will run on
     runs-on: macOS-latest
 
@@ -152,6 +151,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Setup LFS
+        run: |
+          sudo apt-get install git-lfs 
+          git lfs install
       
       - name: Setup Java JDK
         uses: actions/setup-java@v1.4.2
@@ -159,7 +162,8 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Create package
-        run: cd bin/jar & jpackage --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
+        run: cd bin/jar & jpackage --name passwordmanagerlinux.deb --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
+      - run: git lfs track passwordmanagerlinux.deb_0.0.0-1_amd64.deb
       - run: git checkout master && git fetch && git pull
       - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
         with:
@@ -204,7 +208,4 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-      - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+  
