@@ -38,7 +38,7 @@ jobs:
           name: FinalJar
       - name: Test Jar
       # There are no checked errors since they were just compiled but this checks for unchecked errors.
-        run: java -jar password-manager-one/password-manager-one/passwordmanagerone.jar
+        run: tree /home/runner/work/password-manager-one/password-manager-one && java -jar /home/runner/work/password-manager-one/password-manager-one/passwordmanagerone.jar
       #- name: Merge development -> staging
       #  uses: devmasx/merge-branch@v1.3.0
       #  with:
