@@ -32,7 +32,7 @@ jobs:
           java-version: 14.0    
       # Runs a single command using the runners shell
       - name: Create package
-        run: cd bin/jar & jpackage --name package.deb --input ./bin/packages/linux --main-jar passwordmanagerone.jar --app-version 0.0.0
+        run: cd bin/jar & jpackage --name ../packages/linux/package.deb --input . --main-jar passwordmanagerone.jar --app-version 0.0.0
       - run: git lfs track package.deb
       - run: git checkout master && git fetch && git pull
       - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
