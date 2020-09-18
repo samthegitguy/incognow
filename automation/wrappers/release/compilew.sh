@@ -4,7 +4,7 @@ echo This script is for creating the java file. If you wish to run the code plea
 echo There is no production version for this program yet.
 javac src/*.java -d bin/classes -cp bin/libs
 javadoc src/*.java -d docs
-jar vcmf manifest.txt passwordmanagerone.jar -C bin/classes . -C docs . -C assets .
+jar vcmf manifest.txt passwordmanagerone.jar -C bin/classes . -C docs . -C assets . -cp bin/libs
 mv passwordmanagerone.jar bin/jar -cp bin/libs
 git add bin && git commit -m "Update bin and docs files for release"
 echo on

@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with Actions
+name: Java Compiler
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Install software
+      run: |
+        sudo add-apt-repository ppa:openjdk-r/ppa 
+        sudo apt update
+        sudo apt install openjdk-8-jdk
+        sudo apt install tree
+        export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+    - name: Compile
+      run: bash automation/wrappers/release/compilew.sh
+    - name: Upload Jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: FinalJar
+        path: bin/jar/passwordmanagerone.jar
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: |
+          sudo apt install default-jre
+      - name: Download new jar
+        uses: actions/download-artifact@v2
+        with:
+          name: FinalJar
+      - name: Test Jar
+      # There are no checked errors since they were just compiled but this checks for unchecked errors.
+        run: java -jar /home/runner/work/password-manager-one/password-manager-one/passwordmanagerone.jar 
+      #- name: Merge development -> staging
+      #  uses: devmasx/merge-branch@v1.3.0
+      #  with:
+      #    type: now
+      #    from_branch: master
+      #    target_branch: working
+      #    github_token: ${{ github.token }}
