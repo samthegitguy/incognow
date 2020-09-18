@@ -4,9 +4,10 @@ import java.security.Signature;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.security.auth.callback.TextOutputCallback;
 
 public class EncryptText {
-   public static void main(String args[]) throws Exception{
+   public static void EncryptText(String text) throws Exception{
       //Creating a Signature object
       Signature sign = Signature.getInstance("SHA256withRSA");
       
@@ -26,7 +27,7 @@ public class EncryptText {
       cipher.init(Cipher.ENCRYPT_MODE, pair.getPublic());
 	  
       //Adding data to the cipher
-      byte[] input = "PlainText".getBytes();	  
+      byte[] input = TextOutputCallbackgetBytes();	  
       cipher.update(input);
 	  
       //encrypting the data
