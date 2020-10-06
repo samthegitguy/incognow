@@ -31,6 +31,8 @@ jobs:
     needs: build
     steps:
       - run: |
+          export CODECOV_TOKEN="d9600ef4-76b6-48cb-b479-7b10e2882c9f"
+          bash <(curl -s https://codecov.io/bash)
           sudo apt install default-jre
       - name: Download new jar
         uses: actions/download-artifact@v2
